@@ -42,7 +42,7 @@ print(f"El resultado de la operación fue: {resultado}")
 nota=int(input("Ingrese la nota"))
 if ((nota>0) and (nota < 3)):
     print("Haz reprobado")
-elif nota < 5:
+elif ((nota>0) and (nota < 5)):
     print("Acabas de aprobar, felicidades!")
 elif nota == 5:
     print("Tu nota fue la mejor de la clase, lo hiciste excelente")
