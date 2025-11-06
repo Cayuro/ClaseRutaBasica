@@ -40,7 +40,7 @@ print(f"El resultado de la operación fue: {resultado}")
 
     #Ejercicio 11: Clasificador de notas
 nota=int(input("Ingrese la nota"))
-if nota < 3:
+if ((nota>0) and (nota < 3)):
     print("Haz reprobado")
 elif nota < 5:
     print("Acabas de aprobar, felicidades!")
@@ -48,3 +48,23 @@ elif nota == 5:
     print("Tu nota fue la mejor de la clase, lo hiciste excelente")
 else:
     print("Creo que has ingresado una nota que no es")
+
+    #Ejercicio 12: Comparador de tres numeros
+num1=int(input("Ingresa el primer número: "))
+num2=int(input("Ingresa el segundo número: "))
+num3=int(input("Ingresa el tercer número: "))
+
+if num1>=num2 and num1>=num3:
+    mayor= num1
+elif num2>=num1 and num2>=num3:
+    mayor=num2
+else:
+    mayor=num3
+print(f"el numero MAYOR de estos tres es {mayor}")
+if num1<=num2 and num1<=num3:
+    menor= num1
+elif num2<=num1 and num2<=num3:
+    menor=num2
+else:
+    menor=num3
+print(f"el numero MENOR de estos tres es {menor}")
