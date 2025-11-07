@@ -35,7 +35,7 @@ elif op == '*':
 elif op == '/':
     resultado= n1/n2
 else:
-    resultado= "ERROR"
+    resultado= "ERROR esto no es un operador aritmetico válido"
 print(f"El resultado de la operación fue: {resultado}")
 
     #Ejercicio 11: Clasificador de notas

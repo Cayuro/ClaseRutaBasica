@@ -1,6 +1,5 @@
 #---------------------- NIVEL 3 ---------------------
     #Ejercicio 13 contar del 1 al 10
-'''
 i=1
 while True:
     if i>10:
@@ -9,6 +8,8 @@ while True:
     i+=1
 
     #Ejercicio 14  sumatoria 1 al n
+print("___________--------------_________________")
+print("Ahora haremos la sumatoria desde 1 hasta n")
 n=int(input("Ingrese hasta el número que desea hacer la sumatoria: "))
 sumatoria=0
 for i in range(n+1):
@@ -17,12 +18,12 @@ print(f"si sumas los números hasta {n} el resultado es: {sumatoria}")
 
 
     #Ejercicio 15  tabla de multiplicar
+print("___________--------------_________________")
 num=int(input("Ingrese hasta el número del que desea ver la tabla de multiplicar: "))
 
-for i in range(10):
+for i in range(11):
     opera= i*num
     print(f" {i} x {num} = {opera}")
-'''
 
     #Ejercicio 16  contador regresivo con while
 n=int(input("Ingrese el número desde donde empieza la cuenta regresiva: "))
