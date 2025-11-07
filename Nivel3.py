@@ -23,12 +23,49 @@ for i in range(10):
     opera= i*num
     print(f" {i} x {num} = {opera}")
 '''
+
     #Ejercicio 16  contador regresivo con while
 n=int(input("Ingrese el número desde donde empieza la cuenta regresiva: "))
 
 while n>0:
     print(n)
     n-=1
+
     #Ejercicio 17   adivina el numero random
+import random
+print("___________--------------_________________")
+print("Ahora vamos a jugar a adivinar números, en el rango que elijas\n puedes escribir (salir) para acabar")
+inicio= int(input("En donde quieres empezar (rango de número a adivinar): "))
+fin= int(input("En donde quieres terminar (rango del número a adivinar): "))
+numero_random= random.randint(inicio,fin)
+intento=0
+while True:
+    numero= (input("Adivina el número (o escribe (Salir) para rendirte): "))
+
+    if numero.lower() == "salir":
+        print(f"es una lastima que hayas decidido rendirte.")
+        break
+    try:
+        numero= int(numero)
+        intento+=1
+        if numero == numero_random:
+            print(f"EXCELENTE, FELICIDADES, has adivinado el número aleatorio.")
+            break
+        elif numero < numero_random:
+            print(f"el numero {numero} es menor que el que buscas.")
+        elif numero > numero_random:
+            print(f"el número {numero} es mayor que el buscado.")
+    
+    except ValueError:
+        print("El valor ingresado no fue salir, ni tampoco un número, intenta de nuevo")
 
     #Ejercicio 18   sumar hata usuario escriba 0
+print("________________---_______________")
+n1= int(input("Ahora vamos a sumar, ingresa un numero: "))
+sumado=n1
+while True:
+    n2=int(input("Ahora cuanto le quieres sumar (o 0 para ver resultado): "))
+    sumado= sumado+n2
+    if n2 == 0:
+        print(f"la suma de todos estos números es: {sumado}")
+        break
