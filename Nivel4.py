@@ -52,14 +52,13 @@ for i in range(len(Numeros)):
 print(f"la lista con solo los números pares es la siguiente: {n_pares}")
 
     #Ejercicio 24 elimina duplicados
-# Iterar hacia atrás (desde el penúltimo elemento hasta el primero)
-for i in range(len(Numeros) - 2, -1, -1):
-    # Iterar desde el elemento actual (i) hacia atrás
+# ingresa al bucle, e itera hacia atrás (desde el penúltimo elemento hasta el primero), teniendo en cuenta el largo de la lista numeros
+for i in range(len(Numeros) - 2, -1, -1): # itera desde el elemento actual (i) hacia atrás
+    
     for j in range(len(Numeros) - 1, i, -1):
-        # Si encuentra un duplicado
-        if Numeros[i] == Numeros[j]:
-            # Elimina el duplicado (el que tiene el índice mayor, j)
-            Numeros.pop(j)
+        if Numeros[i] == Numeros[j]: # en caso de encontrar un duplicado
+            
+            Numeros.pop(j)  # Elimina el duplicado (el que tiene el índice mayor, j)
 print(f"la lista sin duplicados es: {Numeros}")
 
 
