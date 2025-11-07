@@ -27,15 +27,16 @@ n1=int(input("Ingrese el primer número: "))
 n2=int(input("Ingrese el segundo número: "))
 op= input("Ingrese uno de los siguientes operadores: suma (+) , resta (-) , multiplicacion (*) , división (/) : ")
 if op == '+':
-    resultado= n1+n2
+    result= n1+n2
 elif op == '-':
-    resultado= n1-n2
+    result= n1-n2
 elif op == '*':
-    resultado= n1*n2
+    result= n1*n2
 elif op == '/':
-    resultado= n1/n2
+    result= n1/n2
 else:
-    resultado= "ERROR esto no es un operador aritmetico válido"
+    result= "ERROR"
+    print("Este no es un operador aritmetico")
 print(f"El resultado de la operación fue: {resultado}")
 
     #Ejercicio 11: Clasificador de notas
