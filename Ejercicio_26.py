@@ -1,3 +1,5 @@
+    # Ejercicio 26 - Carrito de Compras
+#primero hacemos la lista de productos disponibles, con un diccionario para que a cada item se le defina un precio.
 frutas = {
     "uva": 700,
     "fresa": 7000,
@@ -13,7 +15,7 @@ frutas = {
     "granadilla": 2300,
     "guayaba": 3700,
     "coco": 3200,
-    "papaya": 6000
+    "papaya": 5000
 }
 
 compras = {} 
@@ -21,60 +23,52 @@ total = 0
 
 print("\nFrutas disponibles y sus precios:")
 for fruta, precio in frutas.items():
-    print(f"- {fruta.capitalize()}: ${precio}")
+    print(f"{fruta.capitalize()}: ${precio}")
 
 # Bucle para llenar el carrito
 while True:
-    print("-" * 30)
-
-    # 3. Pedir la fruta
     fruta_elegida = input("Ingrese el nombre de la fruta (o escriba 'fin' para terminar): ").lower()
-
-    # Condición de salida
     if fruta_elegida == 'fin':
         break
-
-    # 4. Validar si la fruta existe (Ahora se usa 'frutas')
     if fruta_elegida not in frutas:
-        print(f"❌ '{fruta_elegida.capitalize()}' no está disponible o el nombre es incorrecto.")
-        continue # Vuelve al inicio del bucle
-
-    # 5. Pedir la cantidad
+        print(f"{fruta_elegida.capitalize()} no está disponible o el nombre es incorrecto.")
+        continue
+   
+    # Bucle para pedir la cantidad, dentro del bucle de frutas, porque luego de la fruta se requiere la cantidad 
+    # Con esto se logra que si la fruta es inválida, no se pida cantidad, y una vez se piden ambos reinicia el ciclo
     while True:
-        try:
+        try: #evita errores, si ingresan texto por ejemplo
             cantidad = int(input(f"¿Cuántas unidades de {fruta_elegida.capitalize()} desea llevar? "))
-            if cantidad <= 0:
-                print("⚠️ La cantidad debe ser un número positivo.")
-                continue
-            break # Sale del bucle de cantidad si es válido
+            if cantidad > 0: #si ingresan un número, además mayor que 0, ya queda bien asignada la cantidad, sale del bucle.
+                break   #sale del bucle, sigue en el bucle de pedir frutas.
+            else:#si no se cumple ese if, dice que no es positivo, por lo que es invalido, y este bucle vuelve a iniciar.
+                print("La cantidad debe ser un número positivo.")
+                
+            
         except ValueError:
-            print("⚠️ Entrada no válida. Por favor, ingrese un número entero.")
+            print("Entrada no válida.")
 
-    # 6. Añadir/Actualizar el carrito (Ahora se usa 'compras')
-    # Si la fruta ya está, se suma la nueva cantidad. Si no está, se agrega.
-    cantidad_actual = compras.get(fruta_elegida, 0)
+    # aquí se añade la fruta y su cantidad, verificando primero si ya existe en el carrito, por si ingresa dos veces la misma fruta.
+    if fruta_elegida in compras:
+        cantidad_actual = compras[fruta_elegida]
+    else:
+        cantidad_actual = 0
+
     compras[fruta_elegida] = cantidad_actual + cantidad
 
-    print(f"✅ Se han añadido {cantidad} unidades de {fruta_elegida.capitalize()} al carrito.")
+    print(f"Se han añadido {cantidad} unidades de {fruta_elegida.capitalize()} al carrito.")
 
-# ---------------------------------------------
-# 7. CÁLCULO Y RESUMEN FINAL
-# ---------------------------------------------
+# Mostrar la factura
+print("\n ---------- FACTURA ---------------")
 
-print("\n\n--- 🧾 FACTURA Y TOTAL ---")
-
-# Se usa 'compras'
-if not compras:
+if not compras: #no hay nada en la lista de compras
     print("El carrito está vacío.")
 else:
-    # Se usa 'frutas' para obtener el precio
-    for fruta, cantidad in compras.items():
+    for fruta, cantidad in compras.items(): # en caso de que hayan compras, se inicia un bucle para mostrar cada fruta y cuanto le cuesta la cantidad
         precio_por_unidad = frutas[fruta]
         subtotal = precio_por_unidad * cantidad
-        total += subtotal # Se usa 'total'
-        
+        total += subtotal
+
         print(f"- {cantidad}x {fruta.capitalize()} @ ${precio_por_unidad:,} c/u: Subtotal ${subtotal:,}")
 
-    print("-" * 40)
-    print(f"TOTAL FINAL A PAGAR: ${total:,}") # Se usa 'total'
-    print("-" * 40)
+    print(f"\nTOTAL A PAGAR: ${total:,}") 
