@@ -69,6 +69,6 @@ else:
         subtotal = precio_por_unidad * cantidad
         total += subtotal
 
-        print(f"- {cantidad}x {fruta.capitalize()} @ ${precio_por_unidad:,} c/u: Subtotal ${subtotal:,}")
+        print(f"-{cantidad}unidades  {fruta.capitalize()}   ${precio_por_unidad:,}c/u:  Subtotal ${subtotal:,}")
 
     print(f"\nTOTAL A PAGAR: ${total:,}") 
