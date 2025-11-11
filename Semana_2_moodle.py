@@ -30,3 +30,4 @@ while option!=4:
             print(f"You buy {inventary[name]['Quantity']} each one for {inventary[name]['Price']} ")
             
         print(f"The total value is {value}")
+    #Esto es todo por hoy
