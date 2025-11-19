@@ -20,3 +20,5 @@ def agregar_linea(nombre,datos):
     with open(nombre, "a", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(datos)
+
+        print("Semana 3")
