@@ -113,3 +113,18 @@ Criterios de aceptación
         Se entrega el diagrama de flujo del sistema completo (PNG/PDF).
 
 '''
+inventory=[]
+def add_product(inventory,name,price,quantity):
+    name= input("Ingresa el nombre del producto: ")
+    try: 
+        price= float(input("Ingrese el precio del producto"))
+        quantity= int(input("Ingresa la cantidad de productos: "))
+    except ValueError:
+        print("Ese precio no concuerda, vuelve a ingresarlo.")
+
+def show_inv(inventory):
+    print(inventory)
+
+def find_product(invetory,name):
+    
+    for product in inventory:
