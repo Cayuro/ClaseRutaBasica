@@ -1,8 +1,9 @@
 from servicio import *
-from archivo_csv import guardar_csv, cargar_csv
+from archivo_csv import guardar_csv, cargar_csv, cargar_fusionar
 
-inventario = []
-ARCHIVO_CSV= ("Inventario.csv")
+ARCHIVO_CSV= "Inventario.csv"
+inventario= cargar_csv(ARCHIVO_CSV)
+
 def Menu():
     global inventario
     while True:
@@ -19,7 +20,7 @@ def Menu():
             for p in encontrados:
                 print(p)
         elif opcion == "4":
-            actualizar_productos(inventario)
+            actualizar_producto(inventario)
         elif opcion == "5":
             nombre = input("Nombre a eliminar: ")
             eliminar_producto(inventario, nombre)

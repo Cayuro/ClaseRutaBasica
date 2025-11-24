@@ -5,7 +5,6 @@ def guardar_csv(inventario, ruta):
     if not inventario:
         print("Inventario vacío. No se puede guardar.")
         return
-
     try:
         with open(ruta, "w", newline="", encoding="utf-8") as file:
             writer = csv.writer(file)
@@ -61,7 +60,7 @@ def cargar_fusionar(inventario, archivo):
         print("No se cargó nada.")
         return inventario
     decision = input("Deseas sobreescribir el inventario, (1) si, (2) no : ").strip().upper()
-    if decision == "S":
+    if decision == "1":
         print("Inventario sobrescrito.")
         return cargados
     # Si NO sobrescribe → fusionar

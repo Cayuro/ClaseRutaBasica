@@ -7,6 +7,8 @@ def agregar_producto(inventario):
             try:
                 cantidad = int(input("Cantidad: "))
                 precio = float(input("Precio: "))
+                if cantidad < 0 or precio < 0:
+                    raise ValueError
                 break
             except ValueError:
                 print("ingresa un precio o cantidad validos")
