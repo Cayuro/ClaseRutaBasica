@@ -1,0 +1,3 @@
+customer,customer_type,product,quantity,date,discount,total
+jose,wholesale,Joselito,2,2025-11-26,15.0,170.0
+jose,wholesale,Joselito,2,2025-11-26,15,170.0
