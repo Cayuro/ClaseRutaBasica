@@ -1,11 +1,6 @@
-import csv
+from usuarios_csv import downloading_csv
+from services import add_soccer, delete_soccer, update_soccer, show_soccer
 #llamamos el archivo usuario.csv en modo lectura, lo leemos y abajo lo convertimos en lista
-
-def downloading_csv(archivo):
-    with open(archivo, "r") as file:
-        reader = csv.DictReader(file)
-        usuarios = list(reader)
-    return usuarios
 
 def validator_login(archivo):
     usuarios = downloading_csv(archivo)
@@ -42,12 +37,27 @@ def validator_name(archivo):
             number_try +=1
          
 
-def menu(archivo):
-    if validator_login(archivo):
-        print("""1. ADD A SOCCER TEAM
-                 2. SHOW THE SOCCER TEAM
-                 3. UPDATE A SOCCER TEAM
-                 4. DELETE A SOCCER TEAM""")
-        
+def menu(file_user, file_soccer):
+    if validator_login(file_user):
+        while True:
+            print("""   1. ADD A SOCCER TEAM
+                        2. SHOW THE SOCCER TEAM
+                        3. UPDATE A SOCCER TEAM
+                        4. DELETE A SOCCER TEAM
+                        5. OUT""")
+            option = input("What do u wanna do (1 , 2 , 3 , 4 ): ")
+            if option == '1':
+                add_soccer(file_soccer)
+            elif option == '2':
+                show_soccer(file_soccer)
+            elif option == '3':
+                update_soccer(file_soccer)
+            elif option == '4':
+                delete_soccer(file_soccer)
+            elif option == '5':
+                return (print("Nice to se you, come back as soon as you need."))
+            else:
+                print("OPTION NO VALID: only between 1 - 5 ")
+                continue
 
-menu("usuarios.csv")
+menu("usuarios.csv","futbol.csv")

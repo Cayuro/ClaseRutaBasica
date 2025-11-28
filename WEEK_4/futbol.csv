@@ -1,6 +1,8 @@
-Soccer_team,PJ,PG,PE,PP,GF,GC,Pts
-Barcelona,10,7,2,20,8,23
-Real Madrid,10,6,3,18,10,21
-Atlético Madrid,10,5,4,15,7,19
-Sevilla,10,4,3,12,11,15
-Valencia,10,3,4,10,12,13
+Soccer_team,PJ,PG,PE,PP,Pts
+Barcelona,10,7,2,1,23
+Real Madrid,10,6,3,1,21
+Atlético Madrid,10,5,4,1,19
+Sevilla,10,4,3,3,15
+Valencia,10,3,4,3,13
+Barcelona,16,12,2,2,38
+Barcelona,20,120,0,0,360
