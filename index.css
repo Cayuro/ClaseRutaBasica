@@ -12,6 +12,7 @@ body {
 .size200 {
     font-size: 200px;
     font-family: 'Georgia', serif;
+    color: rgb(17, 157, 212);
 }
 
 .size300 {
