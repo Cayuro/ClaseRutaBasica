@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Desarrollador Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JUAN ESTEBAN GÓMEZ</h1>
+        <nav>
+            <ul>
+                <li><a href="#about-me">Conoceme</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="mascotas.html">Mis Mascotas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about-me">
+            <h2>Acerca de Mí</h2>
+            <p id="welcome-text">¡Bienvenido! Soy un desarrollador enfocado en el aprendizaje continuo de tecnologías web modernas.</p>
+            <button id="toggle-info-btn">Mostrar Info Extra</button>
+            <div id="extra-info" style="display: none;">
+                <p>Mi objetivo es construir soluciones web escalables y eficientes, aplicando siempre las mejores prácticas.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3>Proyecto 1: E-commerce Mockup</h3>
+                    <p>Diseño responsivo usando Flexbox y Grid.</p>
+                    <a href="#">Ver Demo</a>
+                </article>
+                <article class="project-card">
+                    <h3>Proyecto 2: Landing Page</h3>
+                    <p>Optimización CSS y variables globales.</p>
+                    <a href="#">Ver Demo</a>
+                </article>
+                <article class="project-card">
+                    <h3>Proyecto 3: Integración API</h3>
+                    <p>Uso de JavaScript para manipulación del DOM.</p>
+                    <a href="#">Ver Demo</a>
+                </article>
+                <article class="project-card">
+                    <h3>Proyecto 4: Dashboard</h3>
+                    <p>Ejemplo de layout complejo con CSS Grid Area.</p>
+                    <a href="#">Ver Demo</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contáctame</h2>
+            <form>
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Email">
+                <textarea placeholder="Tu Mensaje"></textarea>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+            <button id="change-text-btn">¡Haz clic para un mensaje!</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Portafolio Personal. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
